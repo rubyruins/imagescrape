@@ -2,13 +2,13 @@ import time
 import urllib
 import os
 import math
-import selenium
-from selenium import webdriver
-from PIL import Image
-import requests
 import threading
 import shutil
 import random
+import requests
+import selenium
+from selenium import webdriver
+from PIL import Image
 
 def scraper(searchterm, foldername):  
 	driver = webdriver.Chrome("../chromedriver_win32/chromedriver.exe")
