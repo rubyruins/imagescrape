@@ -15,11 +15,16 @@ def scraper(searchterm, foldername):
 	driver.get("https://www.google.co.in/search?q=" + searchterm.replace(' ', '%20') + "&source=lnms&tbm=isch")
 	for _ in range(500):
 		driver.execute_script("window.scrollBy(0,10000)")
-		if _%100 == 0:
+		if _%10 == 0:
 			try:
 				if driver.find_element_by_xpath("//input[@value='Show more results']"):
 					driver.find_element_by_xpath("//input[@value='Show more results']").click()
 					time.sleep(2)
+			except:
+				pass
+			try:
+				if driver.find_element_by_xpath("//span[contains(text(), 'See more')]"):
+					driver.find_element_by_xpath("//span[contains(text(), 'See more')]").click()
 			except:
 				pass
 	time.sleep(3)
